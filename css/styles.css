@@ -130,10 +130,14 @@ h6 {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
-.nav-list .link {
+.nav-link {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-item:not(:last-child) {
   margin-right: 50px;
@@ -142,6 +146,18 @@ h6 {
 .nav-link:focus {
   color: var(--hover-font-color);
 }
+.nav-link.current {
+  padding-bottom: 0;
+}
+.nav-link.current::after {
+  display: block;
+  content: "";
+  margin-top: 28px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: currentColor;
+}
 .contact-list {
   display: flex;
 }
@@ -149,20 +165,24 @@ h6 {
   fill: currentColor;
   margin-right: 10px;
 }
+.contact-item:not(:last-child) {
+  margin-right: 50px;
+}
 .contact-link {
   display: flex;
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
-}
-.contact-item:not(:last-child) {
-  margin-right: 50px;
-}
-.contact-link {
-  color: var(--secondary-font-color);
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  color: var(--secondary-font-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -281,10 +301,30 @@ h6 {
 .work-item:not(:last-child) {
   margin-right: 30px;
 }
-.work-item > img {
+.work-item-thumb {
+  position: relative;
+}
+.work-item-thumb > img {
   display: block;
 }
+.work-item-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
 
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-font-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /*------------- TEAM SECTION -------------*/
 
 .section-team {
@@ -346,6 +386,10 @@ h6 {
   fill: var(--icon-color);
   background-color: transparent;
   border-radius: 50%;
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-link:hover,
 .team-social-link:focus {
@@ -383,6 +427,10 @@ h6 {
   fill: var(--icon-color);
   border: 1px solid var(--icon-color);
   border-radius: 4px;
+
+  transition-property: border-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -413,6 +461,10 @@ h6 {
   font-style: normal;
   color: var(--white-font-color);
   margin-bottom: 9px;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-map:hover,
 .link-map:focus {
@@ -424,6 +476,10 @@ h6 {
 .nav-address-footer {
   font-style: normal;
   color: var(--grey-font-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-address-footer:hover,
 .nav-address-footer:focus {
@@ -455,6 +511,10 @@ h6 {
   fill: var(--icon-color-footer);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
@@ -485,6 +545,10 @@ h6 {
   line-height: 1.6;
 
   padding: 6px 22px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .radio-button:hover,
 .radio-button:focus {
@@ -509,6 +573,10 @@ h6 {
 }
 .card-link {
   display: block;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-link:hover,
 .card-link:focus {
